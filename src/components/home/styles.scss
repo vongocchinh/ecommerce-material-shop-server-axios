@@ -1,0 +1,21 @@
+$tablet-width: 768px;
+$res_320 : "only screen and (max-width: 620px)";
+.itemCategoryProduct{
+    width: auto;
+}
+.responsiveItemCategoryHidden{
+    display: none
+}
+@mixin responsive_320() {
+    @media #{$res_320} {
+        @content;
+    }
+}
+@include responsive_320{
+    .responsiveItemCategory{
+        display: none;
+    }
+    .responsiveItemCategoryHidden{
+        display: inline;
+    }
+}

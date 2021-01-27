@@ -1,0 +1,94 @@
+[
+
+    {
+        "id":"1",
+        "name":"Realme 7 8GB/128GB Chính Hãng Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":12,
+        "rule":true,
+        "img":"https://cdn11.bigcommerce.com/s-36j4rglm/images/stencil/1280x1280/products/937/3813/image_1__68095.1562876630.jpg?c=2"
+    },
+    {
+        "id":"2",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":72,
+        "rule":true,
+        "img":"https://phucanhcdn.com/media/product/37791_a71_b.png"
+    }
+    ,{
+        "id":"3",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":82,
+        "rule":false,
+        "img":"https://vn-test-11.slatic.net/p/0596d229d5690335b97fcb16252bd412.jpg"
+    }
+    ,{
+        "id":"4",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":122,
+        "rule":true,
+        "img":"https://cdn-img-v2.webbnc.net/uploadv2/web/11/11223/product/2020/03/24/07/30/1585035058_samsung-galaxy-s20-plus-5g-g986b-12gb-ram-128gb-du.jpg?v=4"
+    }
+    ,{
+        "id":"5",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":122,
+        "rule":false,
+        "img":"https://www.xtmobile.vn/vnt_upload/product/08_2019/thumbs/600_samsung-galaxy-a71-5g.jpg"
+    }
+    ,{
+        "id":"6",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":126,
+        "rule":true,
+        "img":"https://fptshop.com.vn/Uploads/Originals/2020/4/15/637225425631770771_ss-a71-5g-1.png"
+    }
+    ,{
+        "id":"7",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":128,
+        "rule":false,
+        "img":"https://www.xtmobile.vn/vnt_upload/product/08_2019/thumbs/600_samsung-galaxy-a71-5g.jpg"
+    },
+    {
+        "id":"8",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":182,
+        "rule":true,
+        "img":"https://www.xtmobile.vn/vnt_upload/product/02_2020/thumbs/600_samsung_galaxy_s20_plus_5g_12gb_256gb.jpg"
+    },
+    {
+        "id":"9",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":172,
+        "rule":true,
+        "img":"https://cdn1.viettelstore.vn/images/Product/ProductImage/medium/1045821718.jpeg"
+    },
+    {
+        "id":"10",
+        "name":"Realme 7 8GB/128GB Chính Hãng ",
+        "price":"9.600.000",
+        "priceSale":"9.600.000",
+        "count":122,
+        "rule":false,
+        "img":"https://phucanhcdn.com/media/product/37791_a71_b.png"
+    }
+    
+]
