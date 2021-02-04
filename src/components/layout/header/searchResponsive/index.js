@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Hidden, Typography, Container, TextField } from "@material-ui/core";
+import { Hidden, Container, TextField } from "@material-ui/core";
 // import { CssBaseline } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles";
@@ -11,10 +11,10 @@ class index extends Component {
     return (
       <>
         <Hidden mdUp>
-          <Typography component="div" className={classes.headerMenu}>
-            <Typography component="div" className={classes.headerItem}>
+          <div component="div" className={classes.headerMenu}>
+            <div component="div" className={classes.headerItem}>
               <Container maxWidth="lg">
-                <Typography
+                <div
                   component="div"
                   style={{
                     backgroundColor: "white",
@@ -42,10 +42,10 @@ class index extends Component {
                       }}
                     />
                   </form>
-                </Typography>
+                </div>
               </Container>
-            </Typography>
-          </Typography>
+            </div>
+          </div>
         </Hidden>
       </>
     );

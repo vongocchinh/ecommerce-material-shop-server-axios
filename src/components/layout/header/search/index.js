@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./styles";
 import { withStyles } from "@material-ui/styles";
-import { Typography } from "@material-ui/core";
+// import { Typography } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { Hidden } from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -12,11 +12,10 @@ class index extends Component {
     return (
       <>
         <Hidden smDown>
-          <Typography
+          <div
             className={classes.TypographyHeaderCenter}
-            component="div"
           >
-            <form className={classes.formHeader}>
+            <form className={classes.formHeader} autoComplete="off">
               <TextField
                 type="text"
                 size="medium"
@@ -34,7 +33,7 @@ class index extends Component {
                 }}
               />
             </form>
-          </Typography>
+          </div>
         </Hidden>
       </>
     );

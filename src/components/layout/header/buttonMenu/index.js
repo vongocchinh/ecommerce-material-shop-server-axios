@@ -12,25 +12,12 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 // import Hidden from "@material-ui/core/Hidden";
 // import { Button } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
+// import { Typography } from "@material-ui/core";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { Tooltip } from "@material-ui/core";
 import DehazeIcon from '@material-ui/icons/Dehaze';
-var listDrawer = [
-  {
-    id: 1,
-    name: "Home",
-    to: "/",
-    icon: "",
-  },
-  {
-    id: 2,
-    name: "Login",
-    to: "/login",
-    icon: "",
-  },
-];
+import data from './data.json';
 class index extends Component {
   constructor(props) {
     super(props);
@@ -52,7 +39,7 @@ class index extends Component {
     });
   };
   list = (anchor, classes) => (
-    <Typography component="div"
+    <div component="div"
       className={clsx(classes.list, {
         //clsx thay doi className
         [classes.fullList]: anchor === "top" || anchor === "bottom",
@@ -62,7 +49,7 @@ class index extends Component {
       onKeyDown={this.toggleDrawer(anchor, false)}
     >
       <List>
-        {listDrawer.map((data, key) => {
+        {data.map((data, key) => {
           return (
             <Link key={key} to={data.to} className={classes.buttonDrawer}>
               <ListItem button key={data.name}>
@@ -79,21 +66,21 @@ class index extends Component {
         })}
       </List>
       <Divider />
-    </Typography>
+    </div>
   );
   render() {
     const { classes } = this.props;
     return (
       <>
         <>
-          <Typography className={classes.buttonMenuLeft}>
+          <div className={classes.buttonMenuLeft}>
             {["left"].map((anchor) => (
               <React.Fragment key={anchor}>
-                <>
+                <React.Fragment>
                   <Tooltip title="Menu">
                   <DehazeIcon  onClick={this.toggleDrawer(anchor, true)}/>
                   </Tooltip>
-                </>
+                </React.Fragment>
                 <SwipeableDrawer
                   anchor={anchor}
                   open={this.state[anchor]}
@@ -104,7 +91,7 @@ class index extends Component {
                 </SwipeableDrawer>
               </React.Fragment>
             ))}
-          </Typography>
+          </div>
         </>
       </>
     );

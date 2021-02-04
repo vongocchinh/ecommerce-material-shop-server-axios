@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { } from "react";
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles";
 import { Button } from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
 import { Container } from "@material-ui/core";
 import { CssBaseline } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
+// import { Typography } from "@material-ui/core";
 // import TextField from "@material-ui/core/TextField";
 import Search from "./search/index";
 import OptionRight from "./optionRight/index";
@@ -14,31 +14,30 @@ import Headers from "./headerResponsive/index";
 import SearchResponsive from "./searchResponsive/index";
 import { Link } from 'react-router-dom';
 import HeaderMenu from './../header/headerMenu/index';
-class index extends Component {
-  render() {
-    const { classes } = this.props;
+function Header(props) {
+    const { classes } = props;
     return (
       <>
-      <Typography component="div" className={classes.clear} />
+      <div component="div" className={classes.clear} />
         <Hidden xsDown>
-          <Typography component="div" className={classes.headerTitle}>
-            <Typography component="div" className={classes.headerLayout}>
+          <div component="div" className={classes.headerTitle}>
+            <div component="div" className={classes.headerLayout}>
               <Button className={classes.buttonHeader}>
                 Email:Ngocchinh1410@gmail.com
               </Button>
               <Button className={classes.buttonHeader}>Phone:0763717084</Button>
-            </Typography>
-          </Typography>
+            </div>
+          </div>
         </Hidden>
-        <Typography component="div" className={classes.clear} />
+        <div component="div" className={classes.clear} />
         <Headers />
-        <Typography component="div" className={classes.clear} />
+        <div component="div" className={classes.clear} />
         <Hidden smDown>
-          <Typography component="div" className={classes.headerMenu}>
-            <React.Fragment className={classes.headerItem}>
+          <div component="div" className={classes.headerMenu}>
+            <div className={classes.headerItem}>
               <CssBaseline />
               <Container maxWidth="lg">
-                <Typography
+                <div
                   component="div"
                   style={{
                     backgroundColor: "white",
@@ -49,26 +48,26 @@ class index extends Component {
                   }}
                 >
                   <Link to="/" className={classes.Link}>
-                  <Typography
+                  <div
                     className={classes.TypographyHeaderLeft}
                     component="div"
                   >
                     <img alt={LOGO} src={LOGO} className={classes.logoImg} />
-                  </Typography>
+                  </div>
                   </Link>
                   <Search />
                   <OptionRight />
-                </Typography>
+                </div>
               </Container>
-            </React.Fragment>
-          </Typography>
+            </div>
+          </div>
         </Hidden>
-        <Typography component="div" className={classes.clear} />
+        <div component="div" className={classes.clear} />
         <SearchResponsive />
-        <Typography component="div" className={classes.clear} />
+        <div component="div" className={classes.clear} />
         <HeaderMenu/>
       </>
     );
   }
-}
-export default withStyles(styles)(index);
+
+export default withStyles(styles)(Header);

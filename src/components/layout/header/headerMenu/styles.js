@@ -5,6 +5,10 @@ const styles = () => ({
     backgroundColor: "black",
     display: "inline-block",
     textDecoration: "none",
+    position: "sticky",
+    top:"0px",
+    zIndex: 555,
+    transition:"2s"
   },
   container: {
     height: "45px",

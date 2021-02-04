@@ -1,0 +1,14 @@
+ [
+    {
+     " id": 1,
+      "name": "Home",
+      "to": "/",
+      "icon": ""
+    },
+    {
+     " id": 2,
+      "name": "Login",
+      "to": "/login",
+      "icon": ""
+    }
+  ]

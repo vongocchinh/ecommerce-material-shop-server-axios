@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Typography } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles";
 import { Hidden } from "@material-ui/core";
@@ -10,60 +10,61 @@ class index extends Component {
     const { classes } = this.props;
     return (
       <>
-        <Typography component="div" className={classes.header}>
+        <div component="div" className={classes.header}>
           <Container maxWidth="lg">
-            <Typography component="div" className={classes.container}>
+            <div component="div" className={classes.container}>
               <Hidden className={classes.menu}>
                 <Link to="/" className={classes.link}>
-                  <Typography component="div" className={classes.MenuItem}>
+                  <div component="div" className={classes.MenuItem}>
                     <HomeIcon style={{ color: "white",marginTop:-7,marginRight:2 }} />
-                    <Typography className={classes.item} component="p" variant="body2">
+                    <div className={classes.item} component="p" variant="body2">
                       HOME
-                    </Typography>
-                  </Typography>
+                    </div>
+                  </div>
                 </Link>
               </Hidden>
               <Hidden  className={classes.menu}>
                 <Link to="/" className={classes.link}>
-                  <Typography component="div" className={classes.MenuItem}>
-                    <Typography className={classes.item} component="p" variant="body2">
+                  <div component="div" className={classes.MenuItem}>
+                    <div className={classes.item} component="p" variant="body2">
                       ĐIỆN THOẠI
-                    </Typography>
-                  </Typography>
+                    </div>
+                  </div>
                 </Link>
               </Hidden>
               <Hidden className={classes.menu}>
                 <Link to="/" className={classes.link}>
-                  <Typography component="div" className={classes.MenuItem}>
-                    <Typography className={classes.item} component="p" variant="body2">
+                  <div component="div" className={classes.MenuItem}>
+                    <div className={classes.item} component="p" variant="body2">
                       TIN TỨC
-                    </Typography>
-                  </Typography>
+                    </div>
+                  </div>
                 </Link>
               </Hidden>
               <Hidden xsDown className={classes.menu}>
                 <Link to="/" className={classes.link}>
-                  <Typography component="div" className={classes.MenuItem}>
-                    <Typography className={classes.item} component="p" variant="body2">
+                  <div component="div" className={classes.MenuItem}>
+                    <div className={classes.item} component="p" variant="body2">
                       TÀI KHOẢN
-                    </Typography>
-                  </Typography>
+                    </div>
+                  </div>
                 </Link>
               </Hidden>
-              <Hidden xsDown className={classes.menu}>
+              <Hidden xsDown  className={classes.menu}>
                 <Link to="/" className={classes.link}>
-                  <Typography component="div" className={classes.MenuItem}>
-                    <Typography className={classes.item} component="p" variant="body2">
+                  <div component="div" className={classes.MenuItem}>
+                    <div className={classes.item} component="p" variant="body2">
                       LIÊN HỆ
-                    </Typography>
-                  </Typography>
+                    </div>
+                  </div>
                 </Link>
-              </Hidden>
-            </Typography>
+              </Hidden> 
+            </div>
           </Container>
-        </Typography>
+        </div>
       </>
     );
   }
 }
 export default withStyles(styles)(index);
+ 
