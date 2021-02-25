@@ -2,7 +2,7 @@
 import {  fork, put, select, take, takeEvery } from "redux-saga/effects";
 import * as typeHome from "./../../constant/home";
 // import { fetchGetDataProductHome } from "./../../api/api";
-import getApi from './../../utils/getApi';
+import getApi from './../../utils/getApiServer';
 import {
   GetDataProductSuccess,
   GetDataProductSelectSuccess,

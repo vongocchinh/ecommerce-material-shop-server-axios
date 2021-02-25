@@ -7,9 +7,13 @@ const styles=()=>({
         width: "100%",
         height: "100%",
         backgroundColor: "white",
+        display: 'flex',
+        justifyContent:'center',
+        paddingTop: 5,
+        paddingBottom:5
     },
     slider:{
-        width: "100%",
+        width: "97%",
         height: "95%",
         display: 'flex',
         justifyContent:'center',
@@ -151,7 +155,7 @@ const styles=()=>({
         marginTop: 5,
       },
       boxRatting: {
-        marginLeft: -6,
+        marginLeft: 5,
         width: "50%",
       },
       boxRattingCount: {
@@ -198,6 +202,7 @@ const styles=()=>({
           height: "40px",
           border:"1px solid #F3F3F3",
           marginBottom: 10,
+          backgroundColor:'white'
       },
       titleP:{
           padding: 10,

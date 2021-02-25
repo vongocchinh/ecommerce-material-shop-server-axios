@@ -1,0 +1,85 @@
+.color-red {
+    color: red;
+    :hover {
+        cursor: pointer;
+    }
+}
+.container-cart {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    .container-cart-table {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    .container-cart-table-table {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse;
+        border: 1px solid #a0a0a0;
+
+        thead {
+            background-color: #f0f0f0;
+            .container-cart-item-product {
+                width: 270px;
+            }
+            .container-cart-item-images {
+                width: 170px;
+            }
+            .container-cart-item-delete {
+                width: 50px;
+            }
+        }
+        tbody {
+            font-size: 12px;
+            color: #007acc;
+            tr {
+                height: 70px;
+            }
+            .container-cart-item-product {
+                width: 270px;
+            }
+            .container-cart-item-images {
+                width: 170px;
+                height: 100%;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // border: 1px solid  #a0a0a0;
+                img {
+                    width: 70px;
+                    height: 50px;
+                }
+            }
+            .container-cart-item-delete {
+                height: 100%;
+            }
+            .container-cart-item-quantity {
+                cursor: pointer;
+                .cart-increase {
+                    padding-right: 20px;
+                    width: 20px;
+                }
+                .cart-reduction {
+                    padding-left: 20px;
+                    width: 20px;
+                }
+            }
+        }
+    }
+    .container-cart-table-table td {
+        border: 1px solid #a0a0a0;
+        padding: 10px;
+    }
+
+    .container-cart-table-table th {
+        border: 1px solid #a0a0a0;
+        padding: 5px;
+    }
+    .container-cart-item-stt {
+        width: 50px;
+    }
+}

@@ -42,7 +42,7 @@ class index extends Component {
                 </Link>
               </Hidden>
               <Hidden xsDown className={classes.menu}>
-                <Link to="/" className={classes.link}>
+                <Link to="/login" className={classes.link}>
                   <div component="div" className={classes.MenuItem}>
                     <div className={classes.item} component="p" variant="body2">
                       TÀI KHOẢN

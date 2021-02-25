@@ -7,7 +7,7 @@ import AddShoppingCartOutlinedIcon from "@material-ui/icons/AddShoppingCartOutli
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { Link } from "react-router-dom";
-
+import "./styles.scss";
 class index extends Component {
   render() {
     const { classes } = this.props;
@@ -15,37 +15,44 @@ class index extends Component {
       <>
         <Hidden smDown>
           <div className={classes.TypographyHeaderRight} component="div">
-            <Link to="/login" className={classes.link}>
+            <div className={classes.link}>
               <div component="div" className={classes.componentItemUser}>
                 <AccountCircleIcon color="action" />
-                <p
-                  className={classes.menuItem}
-                >
-                 Tai Khoản
-                </p>
+                <div className={classes.menuItem}>
+                  <div className="item-hover-menu-account">
+                    Tai Khoản
+                    <div className="hover-menu-header">
+                      <p>
+                        <Link className="item-p-header-account-menu" to="/user">
+                          Tài Khoản
+                        </Link>
+                      </p>
+                      <p>
+                        <Link
+                          className="item-p-header-account-menu"
+                          to={"/" + this.props.titleLogin.redirect}
+                        >
+                          {this.props.titleLogin.name}
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </Link>
-            <Link to="/" className={classes.link}>
+            </div>
+            <Link to="/cart" className={classes.link}>
               <div component="div" className={classes.componentItem}>
                 <AddShoppingCartOutlinedIcon color="action" />
-                <p
-                  className={classes.menuItem}
-                >
-                  Giỏ Hàng
-                </p>
+                <p className={classes.menuItem}>Giỏ Hàng</p>
               </div>
             </Link>
             <Link to="/" className={classes.link}>
               <div component="div" className={classes.componentItem}>
                 <FavoriteBorderIcon color="secondary" />
-                <p
-                  className={classes.menuItem}
-                >
-                  Yêu Thích
-                </p>
+                <p className={classes.menuItem}>Yêu Thích</p>
               </div>
             </Link>
-          </div> 
+          </div>
         </Hidden>
       </>
     );

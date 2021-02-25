@@ -15,9 +15,9 @@ const styles = () => ({
     "::-webkit-input-placeholder": {
       fontSize: 11,
     },
-    "&$focused": {
-      borderColor: "red",
-    },
+    // "&$focused": {
+    //   borderColor: "red",
+    // },
   },
   buttonMenuLeft: {
     width: "10%",

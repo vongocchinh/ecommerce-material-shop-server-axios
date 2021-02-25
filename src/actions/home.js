@@ -32,3 +32,17 @@ export const GetDataSliderSuccess=(data)=>{
         data
     }
 }
+
+
+export const GetDataProductSlider=()=>{
+    return{
+        type:typeProduct.GetDataProductSlider,
+    }
+}
+
+export const GetDataProductSliderSuccess=(data)=>{
+    return{
+        type:typeProduct.GetDataProductSliderSuccess,
+        data
+    }
+}

@@ -5,17 +5,16 @@ import { Button } from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
 import { Container } from "@material-ui/core";
 import { CssBaseline } from "@material-ui/core";
-// import { Typography } from "@material-ui/core";
-// import TextField from "@material-ui/core/TextField";
-import Search from "./search/index";
+import Search from "./search/Search";
 import OptionRight from "./optionRight/index";
 import LOGO from "./../../../asset/tải xuống.jpg";
 import Headers from "./headerResponsive/index";
-import SearchResponsive from "./searchResponsive/index";
+import SearchResponsive from "./searchResponsive/Search";
 import { Link } from 'react-router-dom';
 import HeaderMenu from './../header/headerMenu/index';
 function Header(props) {
     const { classes } = props;
+    const {LoginMyReducer}=props;
     return (
       <>
       <div component="div" className={classes.clear} />
@@ -55,15 +54,15 @@ function Header(props) {
                     <img alt={LOGO} src={LOGO} className={classes.logoImg} />
                   </div>
                   </Link>
-                  <Search />
-                  <OptionRight />
+                  <Search nameSearch={props.nameSearch}/>
+                  <OptionRight titleLogin={props.titleLogin} LoginMyReducer={LoginMyReducer} />
                 </div>
               </Container>
             </div>
           </div>
         </Hidden>
         <div component="div" className={classes.clear} />
-        <SearchResponsive />
+        <SearchResponsive nameSearch={props.nameSearch}/>
         <div component="div" className={classes.clear} />
         <HeaderMenu/>
       </>

@@ -7,6 +7,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { withStyles } from '@material-ui/styles';
 import styles from './styles';
+import * as format from '../../../utils/format';
+import { format_currency } from './../../../utils/format';
+import { PriceSale } from '../../../constant/format';
 const Loading = ({ classes }) => (
     <div className={classes.lazyLoadingImg}>
       <img
@@ -30,7 +33,7 @@ function ProductItem(props) {
           ) : (
             ""
           )}
-          <Link to="/aa" className={classes.Link}>
+          <Link to={"/product/"+format.to_slug(product.name)+"/"+product.id+".html"} className={classes.Link}>
             <div  className={classes.layoutImg}>
               <LazyLoadImage
                 alt={product.img}
@@ -55,7 +58,7 @@ function ProductItem(props) {
                 className={classes.priceSale}
               >
                 <strong  component="strong">
-                  {product.priceSale} VNĐ
+                  {format_currency(PriceSale(product.price,product.sale))} VNĐ
                 </strong>
               </p>
               <p
@@ -63,7 +66,7 @@ function ProductItem(props) {
                 className={classes.price}
               >
                 <del  component="del">
-                  {product.price} VNĐ
+                  {format_currency(product.price)} VNĐ
                 </del>
               </p>
             </div>

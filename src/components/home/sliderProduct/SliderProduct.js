@@ -1,5 +1,4 @@
-/* eslint-disable array-callback-return */
-import React, {  } from "react";
+import React from "react";
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles";
 // import { div } from "@material-ui/core";
@@ -14,23 +13,15 @@ function SliderProduct(props) {
   return (
     <>
       <div component="div" className={classes.container}>
-        <Container>
-          <div component="div" className={classes.containerSlider}>
-            <div component="div" className={classes.titleName}>
-              <div
-                variant="body2"
-                component="p"
-                className={classes.titleP}
-              >
-                <strong
-                  className={classes.titleP}
-                >
-                  Điện Thoại Nổi Bật
-                </strong>
-              </div>
+        <Container maxWidth="lg">
+          <div component="div" className={classes.titleName}>
+            <div variant="body2" component="p" className={classes.titleP}>
+              <strong className={classes.titleP}>Điện Thoại Nổi Bật</strong>
             </div>
-            <Slider {...settings} className={classes.slider}>
-            {props.showSliderProduct}
+          </div>
+          <div component="div" className={classes.containerSlider}>
+            <Slider className={classes.slider} {...settings}>
+              {props.showSliderProduct}
             </Slider>
           </div>
         </Container>

@@ -3,8 +3,9 @@ const styles=()=>({
         width: "100%",
         height: "auto",
         marginTop: 20,
-        backgroundColor: "#FFFFFF",
-        color:"white"
+        backgroundColor: "#E4E6E9",
+        color:"white",
+        // border:"1px solid black"
     },
     containerFooter:{
         width: "100%",

@@ -9,25 +9,10 @@ import Box from "@material-ui/core/Box";
 import category from "../../../database/category.json";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
-import ProductItem from './ProductItem';
 
 
 function Product(props) {
     const { classes } = props;
-    
-    const productItem=(product)=>{
-     var result=null;
-      result=product.map((data,key)=>{
-        return (
-          <ProductItem 
-            product={data}
-            key={key}
-          />
-        )
-      })
-     return result;
-    }
-    const {product}=props;
     return (
       <>
         <div>
@@ -76,7 +61,7 @@ function Product(props) {
                   box-shadow={3}
                 >
                   <Grid container justify="center" spacing={2}>
-                    {productItem(product)}
+                    {props.showDataProduct}
                   </Grid>
                 </Grid>
               </Grid>

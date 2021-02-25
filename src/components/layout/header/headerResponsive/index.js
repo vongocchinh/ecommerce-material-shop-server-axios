@@ -24,7 +24,7 @@ class index extends Component {
                 </Link>
               </div>
               <div className={classes.MenuRight}>
-                <Link to="/a">
+                <Link to="/cart">
                   <AddShoppingCartOutlinedIcon className={classes.MenuRight}/>
                 </Link>
               </div>

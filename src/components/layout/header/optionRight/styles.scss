@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.hover-menu-header {
+    width: 100px;
+    height: auto ;
+    border: 1px solid black;
+    display: none;
+    position: absolute;
+    z-index: 855;
+    background-color: white;
+    box-shadow: 0.1px 0.5px 0.5px 0.1px black;
+    border-radius: 3px;
+    text-decoration: none;
+    .item-p-header-account-menu{
+        text-decoration: none;
+        color: blue;
+        margin-left: 10px;
+    }
+    padding: 2px;
+}
+
+.item-hover-menu-account:hover .hover-menu-header{
+    display: block;
+}
+
+.hover-menu-header p{
+    display: inline-block;
+    padding: 3px;
+}

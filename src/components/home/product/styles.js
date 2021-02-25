@@ -141,7 +141,7 @@ const styles = (theme) => ({
     marginTop: 5,
   },
   boxRatting: {
-    marginLeft: -6,
+    marginLeft: 5,
     width: "50%",
   },
   boxRattingCount: {

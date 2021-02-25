@@ -3,22 +3,49 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import HomeComponent from "./../../components/home/Home";
-// import axios from 'axios';
 import { useEffect } from "react";
-// import { useState } from 'react';
 import { connect } from "react-redux";
 import * as action from "./../../actions/home";
 import SliderItem from "../../components/home/slider/SliderItem";
-// import ProductComponent from './../../components/home/product/Product';
 import LoadingImg from "../../asset/Spin-1s-200px.gif";
-import SliderProductItem from "../../components/home/sliderProduct/SliderProductItem";
+import SliderProductItem from "../../components/home/sliderProduct/SliderItem";
+import ProductItem from "../../components/home/product/ProductItem";
+import { Redirect } from 'react-router';
 function Home(props) {
-  // const [data, setData] = useState([]);
-  useEffect(async () => {
+  useEffect( async () => {
     props.getDataProduct();
     props.getDataSlider();
+    props.getDataProductSlider();
   });
-  var { ProductHomeMyReducer, SliderHomeMyReducer } = props;
+  var { ProductHomeMyReducer, SliderHomeMyReducer ,ProductSliderHomeMyReducer,LoginMyReducer} = props;
+  if(LoginMyReducer.Login_User_Success){
+    // window.location.reload();
+  }
+  const showSliderProduct = (data) => {
+    var result = null;
+    if (data) {
+      result = data.map((slide, key) => {
+        if (slide.rule) {
+          return <SliderProductItem slide={slide} key={key} />;
+        }
+      });
+    } else {
+    }
+    return result;
+  };
+  const showDataProduct = (data) => {
+    var result = null;
+    if (data) {
+      result = data.map((product, key) => {
+        return <ProductItem product={product} key={key} />;
+      });
+    }
+    return result;
+  };
+  const {SearchMyReducer}=props;
+  if(SearchMyReducer.searchRouter){
+    return <Redirect to="/search" />
+  }
   const showSlider = (data) => {
     var result = null;
     if (data) {
@@ -40,24 +67,16 @@ function Home(props) {
     }
     return result;
   };
-  const showSliderProduct = (data) => {
-    var result = null;
-    if (data) {
-      result = data.map((slide, key) => {
-        return <SliderProductItem slide={slide} key={key} />;
-      });
-    } else {
-      //  console.log("doi");
-    }
-    return result;
-  };
+  
+
   return (
     <>
       <HomeComponent
         product={ProductHomeMyReducer}
         slider={SliderHomeMyReducer}
         showSlider={showSlider(SliderHomeMyReducer)}
-        showSliderProduct={showSliderProduct(ProductHomeMyReducer)}
+        showSliderProduct={showSliderProduct(ProductSliderHomeMyReducer)}
+        showDataProduct={showDataProduct(ProductHomeMyReducer)}
       />
     </>
   );
@@ -67,6 +86,9 @@ const mapStateToProps = (state) => {
   return {
     ProductHomeMyReducer: state.ProductHomeMyReducer,
     SliderHomeMyReducer: state.SliderHomeMyReducer,
+    ProductSliderHomeMyReducer:state.ProductSliderHomeMyReducer,
+    SearchMyReducer:state.SearchMyReducer,
+    LoginMyReducer:state.LoginMyReducer
   };
 };
 const dispatchToProps = (dispatch, props) => {
@@ -77,6 +99,9 @@ const dispatchToProps = (dispatch, props) => {
     getDataSlider: () => {
       dispatch(action.GetDataSlider());
     },
+    getDataProductSlider:()=>{
+      dispatch(action.GetDataProductSlider());
+    }
   };
 };
 export default connect(mapStateToProps, dispatchToProps)(Home);
