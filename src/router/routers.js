@@ -9,6 +9,7 @@ import ProductDetailContainer from './../container/product/ProductDetail';
 import ProductSearchContainer from './../container/productSearch/Product';
 import UserDetailContainer from './../container/user/userDetail/User';
 import LogoutContainer from './../container/header/Logout';
+// import ProtectedRoute from './ProtectedRoute';
 class routers extends Component {
   render() {
     return (
@@ -16,6 +17,9 @@ class routers extends Component {
         <Switch>
           <Route exact path="/" component={HomeContainer} />
           <Route  path="/login" component={LoginContainer} />
+          {/* <ProtectedRoute path="/login" >
+            <LoginContainer/>
+          </ProtectedRoute> */}
           <Route  path="/register" component={RegisterContainer} />
           <Route path="/product/:name/:id.html" component={ProductDetailContainer}/>
           <Route path="/cart"  component={CartContainer} />

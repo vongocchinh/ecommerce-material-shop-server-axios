@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles";
 import { Container } from "@material-ui/core";
@@ -13,7 +13,10 @@ function Login(props) {
     props.loginUser(data);
     reset();
   };
-
+  const [pw, setPw] = useState(false)
+  const showHidden=()=>{
+    setPw(!pw);
+  }
   return (
     <>
       <div className="container">
@@ -40,11 +43,13 @@ function Login(props) {
                     <div className="div-control-form-input">
                       <input
                         name="password"
+                        type={pw?"text":"password"}
                         ref={register({ required: true, minLength: 6 })}
                         placeholder="password"
                         className="input-form"
                       />
                       {errors.password && <p>Vui Lòng Nhập Thông Tin</p>}
+                      <div className="show-hidden" onClick={showHidden}>{pw?"Hidden":"show"}</div>
                     </div>
                     <div className="div-control-form-input">
                       <input

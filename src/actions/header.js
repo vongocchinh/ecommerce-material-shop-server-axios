@@ -9,6 +9,15 @@ export const nameSearchAction=(data)=>{
     }
 }
 
+export const handleProductGetNameAction=(key)=>{
+    return{
+        type:types.GetProductKeyName,
+        payload:{
+            keyword:key
+        }
+    }
+}
+
 export const SearchProductSuccess=({payload})=>{
     return {
         type:types.SEARCH_SUCCESS,

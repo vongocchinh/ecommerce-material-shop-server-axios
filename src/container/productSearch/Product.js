@@ -7,18 +7,21 @@ import * as action from "../../actions/header";
 import * as actionProduct from "../../actions/home";
 function Product(props) {
   const { SearchMyReducer } = props;
-
+  // console.log(SearchMyReducer.listKeyWordSearch[SearchMyReducer.listKeyWordSearch.length-1]);
   useEffect(async () => {
     handleResetRouterProduct();
-    // handleProductAction();
-  });
+    handleProductGetNameAction();
+  },[1]);
   // const handleProductAction=()=>{
   //   props.handleProductAction();
   // }
+  const handleProductGetNameAction=()=>{
+    props.handleProductGetNameAction(SearchMyReducer.listKeyWordSearch[SearchMyReducer.listKeyWordSearch.length-1]);
+  }
   const handleResetRouterProduct = () => {
     setTimeout(() => {
       props.handleResetRouterProduct();
-    }, 1000);
+    }, 100);
   };
   const showProduct = (data) => {
     let xhtml = null;
@@ -46,6 +49,9 @@ const dispatchToProps = (dispatch, props) => {
     handleProductAction: () => {
       dispatch(actionProduct.GetDataProduct());
     },
+    handleProductGetNameAction:(key)=>{
+      dispatch(action.handleProductGetNameAction(key));
+    }
   };
 };
 export default connect(mapStateToProps, dispatchToProps)(Product);

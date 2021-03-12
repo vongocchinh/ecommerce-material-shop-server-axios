@@ -8,6 +8,7 @@ import { call, takeEvery } from "redux-saga/effects";
 import { put } from "redux-saga/effects";
 import getApiServer from './../../utils/getApiServer';
 import { toast } from 'react-toastify';
+// import { Redirect } from 'react-router-dom';
 
 function* GetApi(body) {
   const res = yield getApiServer("user/register", "POST", body);
@@ -16,7 +17,7 @@ function* GetApi(body) {
 function* Register({ payload }) {
   const response = yield call(GetApi, payload.data);
   if (response.status === 200) {
-      toast.dark("Đăng kí thành công ")
+      toast.dark("Đăng kí thành công ");
     yield put(Register_User_Success());
   }else{
       toast.dark("Đăng kí thất bại")

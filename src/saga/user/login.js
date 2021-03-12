@@ -20,9 +20,10 @@ function* loginUser({ payload }) {
  
   if (response.status === 200) {
     toast.dark("login success !!!");
-    var dataUser=response.data;
-    localStorage.setItem("user", JSON.stringify(dataUser));
-    yield put(Login_User_Success(dataUser));
+    var token=response.data.token;
+    console.log(token);
+    localStorage.setItem("token", token);
+    yield put(Login_User_Success(token));
   } else {
     toast.dark("login that bai !!!");
     yield put(Login_User_Fail());

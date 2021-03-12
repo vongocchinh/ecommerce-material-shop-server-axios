@@ -4,7 +4,7 @@ import { takeEvery } from 'redux-saga/effects';
 import { put } from 'redux-saga/effects';
 
 function* Logout(){
-   yield localStorage.removeItem("user");
+   yield localStorage.removeItem("token");
    yield put(Logout_User_Success());
 }
 function* setHandleLogout(){

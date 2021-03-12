@@ -14,7 +14,7 @@ import { Redirect } from 'react-router';
 function Home(props) {
   useEffect( async () => {
     props.getDataProduct();
-    props.getDataSlider();
+    // props.getDataSlider();
     props.getDataProductSlider();
   });
   var { ProductHomeMyReducer, SliderHomeMyReducer ,ProductSliderHomeMyReducer,LoginMyReducer} = props;

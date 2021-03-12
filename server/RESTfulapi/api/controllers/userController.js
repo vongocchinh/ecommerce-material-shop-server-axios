@@ -15,16 +15,18 @@ module.exports = {
     });
   },
   detail: (req, res) => {
-    const id = req.params.userId;
-    let sql = "SELECT * FROM user WHERE id = " + id;
-    db.query(sql, [req.params.productId], (err, response) => {
+    const token = req.params.token;
+    var decoded=jwt.verify(token, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    });
+    let sql = "SELECT * FROM user WHERE id = " + decoded.id;
+    db.query(sql, [decoded.id], (err, response) => {
       if (err) throw err;
       res.header("Access-Control-Allow-Origin", "*");
       res.status(200).send({
         user: {
           username: response[0].username,
           address: response[0].address,
-          id,
         },
       });
     });
@@ -83,10 +85,7 @@ module.exports = {
             res.cookie("token", token, cookieOptions);
             res.header("Access-Control-Allow-Origin", "*");
             res.status(200).send({
-              token,
-              user: {
-                id,
-              },
+              token
             });
           } else {
             res.header("Access-Control-Allow-Origin", "*");

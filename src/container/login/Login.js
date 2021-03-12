@@ -23,12 +23,8 @@ function Login(props) {
     }, 1000);
     return <Redirect to="/" />;
   }
-  if (LoginMyReducer.data.data) {
-    if (LoginMyReducer.data.data.user) {
-      if(LoginMyReducer.data.data.user.id){
-        return <Redirect to="/user" />;
-      }
-    }
+  if (LoginMyReducer.token) {
+    return <Redirect to="/user" />;
   }
 
   return (

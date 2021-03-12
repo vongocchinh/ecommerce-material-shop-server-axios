@@ -14,10 +14,11 @@ function Register(props) {
         username:data.username,
         password:data.password
       });
+      reset();
     }else{
-
+      alert("Mat khau ko trung");
     }
-    reset();
+   
   };
 
   return (
@@ -25,7 +26,6 @@ function Register(props) {
       <div className="container">
         <Container maxWidth="lg" className="containerLogin">
           <div className="container-login-body">
-        
               <div className="login-left">
                 <div className="container-input">
                   <form

@@ -76,3 +76,16 @@ export const findIndex=(data,id)=>{
     }
     return result;
 }
+
+export const findIndexCart=(data,id)=>{
+    var result=-1;
+    if(data){
+        for(let i=0;i<data.length;i++){
+            if(data[i].id_product===id){
+                result=data[i].id;
+                break;
+            }
+        }
+    }
+    return result;
+}

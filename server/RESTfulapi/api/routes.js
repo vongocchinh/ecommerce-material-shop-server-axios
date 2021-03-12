@@ -4,6 +4,8 @@ module.exports = function (app) {
 
   var userCtrl = require("./controllers/userController");
 
+  var cartCtrl = require("./controllers/cartUserController");
+
   // todoList Routes
   app.route("/products").get(productsCtrl.get).post(productsCtrl.store);
   app.get("/products/productDetail/:id",productsCtrl.detail);
@@ -17,10 +19,15 @@ module.exports = function (app) {
 
   app.post("/user/login",userCtrl.login);
   app
-    .route("/user/:userId")
+    .route("/user/:token")
     .get(userCtrl.detail)
     .put(userCtrl.update)
     .delete(userCtrl.delete);
 
     app.post('/user/register',userCtrl.store);
+
+
+  app.post("/cart",cartCtrl.store);
+  app.get("/cart",cartCtrl.get);
+  app.put("/cart/qty/:id",cartCtrl.updateAddQty);
 };
